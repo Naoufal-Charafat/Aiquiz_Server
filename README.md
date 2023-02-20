@@ -1,3 +1,4 @@
+🌐https://aiquiz.fun/
 # Aiquiz_Server
 
 This project is a python server that sends questions with options and a correct answer to a web page based on artificial intelligence. The server is designed to provide a quiz-like experience in an interactive manner.
