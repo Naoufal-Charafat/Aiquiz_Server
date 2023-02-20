@@ -1,0 +1,14 @@
+# usar Playground para los test los respuestas de la AI:
+# https://platform.openai.com/playground?model=text-davinci-003
+
+
+# posible formato de entrada:
+
+# Créame 4 pregunta en (español) , contexto de la pregunta es “marvel” y la siguiente pregunta 2 se basa en el contexto de la ultima respuesta correcta de la pregunta anterior y asi sucesivamente.
+# El formato es:
+# {Pregunta:
+# A)
+# B)
+# C)
+# D)
+# Respuesta correcta: }

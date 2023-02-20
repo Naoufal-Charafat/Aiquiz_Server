@@ -1,0 +1,1 @@
+# Ingresar todas esas funciones auxiliares que no tengas relacion con la propia clase
