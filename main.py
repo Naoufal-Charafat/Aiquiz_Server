@@ -7,8 +7,7 @@
 
 
 if __name__ == '__main__':
-    
-    pass
+    print("test1")
 
     #  declarar los param_model
 
