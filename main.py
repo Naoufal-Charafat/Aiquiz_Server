@@ -8,7 +8,7 @@
 
 if __name__ == '__main__':
 
-    print('Ai Quiz')
+    print('antonio')
 
     #  declarar los param_model
 
