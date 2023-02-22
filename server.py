@@ -2,7 +2,7 @@ class server:
     def __init__(self):
         pass
 
-     # utilizar la lebreria Flask
+    # utilizar la lebreria Flask
 
     def send_questions(self):
         """
@@ -10,7 +10,6 @@ class server:
         :return:
         """
         pass
-
 
     def main(self):
         """

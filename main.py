@@ -8,7 +8,7 @@
 
 if __name__ == '__main__':
 
-    pass
+    print('Ai Quiz')
 
     #  declarar los param_model
 
@@ -23,14 +23,3 @@ if __name__ == '__main__':
 
     # iniciar el servidor
 
-
-
-
-
-
-
-
-
-
-
-    print('AIquiz')
