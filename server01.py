@@ -27,7 +27,6 @@ class server:
 
 
 
-
     @staticmethod
     @app.route('/', methods=['GET'])
     def test():
