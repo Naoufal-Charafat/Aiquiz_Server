@@ -29,7 +29,14 @@ class server:
 
 
     @staticmethod
-    @app.route('/', methods=['POST'])
+    @app.route('/', methods=['GET'])
     def test():
-        return "La conexion Flask conectada"
+        pregunta = '''Pregunta: ¿Cuál es el origen de la palabra "fiesta"?
+
+        Opción A: Viene del latín "festum", que significa celebración.
+        Opción B: Tiene su origen en la lengua griega, con la palabra "heorte", que significa festival.
+        Opción C: Proviene del idioma árabe, con la palabra "fista", que significa diversión.
+        Opción D: Deriva del idioma inglés antiguo, con la palabra "feste", que significa festejar.'''
+
+        return pregunta
 
