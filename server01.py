@@ -30,12 +30,11 @@ class server:
     @staticmethod
     @app.route('/', methods=['GET'])
     def test():
-        pregunta = '''Pregunta: ¿Cuál es el origen de la palabra "fiesta"?
-
-        Opción A: Viene del latín "festum", que significa celebración.
-        Opción B: Tiene su origen en la lengua griega, con la palabra "heorte", que significa festival.
-        Opción C: Proviene del idioma árabe, con la palabra "fista", que significa diversión.
-        Opción D: Deriva del idioma inglés antiguo, con la palabra "feste", que significa festejar.'''
+        pregunta = '''<H2>Pregunta: ¿Cuál es el origen de la palabra "fiesta"?</H2><br>
+        Opción A: Viene del latín "festum", que significa celebración.<br><br>
+        Opción B: Tiene su origen en la lengua griega, con la palabra "heorte", que significa festival.<br><br>
+        Opción C: Proviene del idioma árabe, con la palabra "fista", que significa diversión.<br><br>
+        Opción D: Deriva del idioma inglés antiguo, con la palabra "feste", que significa festejar.<br><br>'''
 
         return pregunta
 
