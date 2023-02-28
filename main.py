@@ -1,3 +1,4 @@
+import server01
 
 # ideas:
 #1)
@@ -6,8 +7,22 @@
 
 
 
+
 if __name__ == '__main__':
-    print("Samu por aqui")
+    server01.app.run(debug=True)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     #  declarar los param_model
 

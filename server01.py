@@ -1,3 +1,5 @@
+from flask import Flask
+app = Flask(__name__)
 class server:
     def __init__(self):
         pass
@@ -19,3 +21,12 @@ class server:
         :return: la respuesta se envia formato JSON
         """
         pass
+
+
+
+
+
+    @app.route('/', methods=['GET'])
+    def hello_world(self):
+        return '¡Hola, Mundo!'
+
