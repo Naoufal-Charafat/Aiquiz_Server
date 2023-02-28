@@ -1,6 +1,7 @@
-from flask import Flask
+from flask import Flask, request
 app = Flask(__name__)
 class server:
+
     def __init__(self):
         pass
 
@@ -26,7 +27,9 @@ class server:
 
 
 
-    @app.route('/', methods=['GET'])
-    def hello_world(self):
-        return '¡Hola, Mundo!'
+
+    @staticmethod
+    @app.route('/', methods=['POST'])
+    def test():
+        return "La conexion Flask conectada"
 
