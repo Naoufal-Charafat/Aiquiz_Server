@@ -1,49 +1,46 @@
-
+import openai
 class AiDavinci:
-    def __init__(self):
+    def __init__(self,api_key):
+        openai.api_key = api_key
+
+
+    @staticmethod
+    def message_GPT(message="hola"):
+        """
+        funcion para obtener resuesta del chatgpt usando la nueva actualziacion de openai API
+        :param message: pregutna del usur
+        :return: resuesta del chatgpt
+        """
+        request_ =openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "Soy el lider que ordenará juegos, pruebas, retos, preguntas, etc. Mi función es hacer que los integrantes del grupo se lo pasen bien, bebiendo alcohol con responsabilidad y creando situaciones de salseo"},
+                {"role": "user", "content": message}
+            ]
+        )
+        cadena = request_['choices'][0]['message']['content']
+        return cadena
+
+
+class Juego:
+
+    @staticmethod
+    def juego(ApiUserKey):
+        aux = AiDavinci(ApiUserKey)
+
+        jugadores = []  # crea una lista vacía
+        n = int(input("¿Cuántos jugadores hay? "))  # pide el número de jugadores
+        for i in range(n):  # repite n veces
+            nombre = input(f"Introduce el nombre del jugador {i + 1}: ")  # pide el nombre de cada jugador
+            jugadores.append(nombre)  # añade el nombre a la lista
+
+        nombres = ", ".join(jugadores)  # une los nombres con comas y espacios
+
+
+
+        respuesta = aux.message_GPT("cuentame un chiste que involucre a estos jugadores: " + nombres)
+
+        print(respuesta)
+
         pass
 
-    def get_response(self):
-        """
-        Obtenemos una respuesta de la AI
-        :return: devolvemos la respuesta = cadena string
-        """
-        pass
-
-    def check_response(self, response):
-        """
-        Filtra la respuesta de la AI, es decir que la respuesta tenga un formato especifico
-        :return: devolvemos un boleano "True/False"
-        """
-        pass
-
-    def filter_response(self):
-        """
-        Esta function se encargará de partir la cadena en 6 partes
-        pregunta; opA; opB; opC; opD; respuesta correcta;
-        :return: devolvemos 6 VARIABLES A LA VEZ opA; opB; opC; opD; respuesta correcta;
-        """
-        pass
-
-    def check_count_questions(self):
-        """
-        En caso de optar por la option B:
-        esta function se encarga de verificar que tenemos los X cuestiones listas para su envio
-        :return: true/false
-        """
-        pass
-
-
-
-    def get_question(self):
-        """
-        Esta function se encargará:
-            option1: (la proxima pregunta se basa en la respuesta última del usr)
-                deberemos de generar la preguntas 1 preguntas = 1 solicitud al servidor, ya que no podemos adivinar
-                la respuesta del usr
-            option2:(la proxima pregunta se basa en la última respuesta correcta del juego)
-                deberemos de generar las x preguntas = 1 solicitud al servidor, es más óptimo y rapido y barato.
-
-        :return: obtener las preguntas
-        """
-        pass
