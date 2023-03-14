@@ -49,24 +49,7 @@ class server:
         Idioma: {idioma}<br><br>"""
         respuesta = header + pregunta
 
-        def message_GPT(message="hola"):
-            """
-            funcion para obtener resuesta del chatgpt usando la nueva actualziacion de openai API
-            :param message: pregutna del usur
-            :return: resuesta del chatgpt
-            """
-            ai.api_key = "sk-"
-            request_ = ai.ChatCompletion.create(
-                model="gpt-3.5-turbo",
-                messages=[
-                    {"role": "system", "content": "soy asistente idioma español"},
-                    {"role": "user", "content": message}
-                ]
-            )
-            cadena = request_['choices'][0]['message']['content']
-            return cadena
-
-        return message_GPT(user)
+        return "null"
 
     @staticmethod
     def trivia_test():
@@ -76,8 +59,10 @@ class server:
         """
         # Envía una solicitud GET a la API de OpenTDB
         cantidad_preguntas = 1
+        difficulty = "easy"
+        type='multiple'
         response = requests.get(
-            f"https://opentdb.com/api.php?amount={cantidad_preguntas}&category=21&difficulty=easy&type=multiple")
+            f"https://opentdb.com/api.php?amount={cantidad_preguntas}&category=21&difficulty={difficulty}&type={type}")
 
         # Obtiene los datos de la respuesta en formato JSON
         data = response.json()
@@ -122,3 +107,4 @@ class server:
     @staticmethod
     def test_flask():
         app.run(debug=True)
+
