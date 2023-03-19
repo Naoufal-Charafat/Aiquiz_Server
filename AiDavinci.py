@@ -41,7 +41,7 @@ class Juego:
 
 
         contexto = f"El contexto es el siguiente, los jugadores {nombres} están jugando a prueva o verdad, un juego social para amigos jóvenes que quieren pasarlo bien en un ambiente de fiesta y alcohol. Los retos son retos como darle un beso a alguien, hacer alguna imitación, hacer alguna posicion extraña, cantar algo. El castigo puede ser desde beber un trago largo de su cubata, quitarse una prenda, hasta estar callado durante un cierto tiempo (1-2 minutos si no beberá). Estas son sus últimas rondas: \nRonda 1:\nTodos los jugadores beben un trago al cubata y están en un ambiente calmado con música de sus gustos a volumen normal, y quieren jugar la siguiente ronda."
-        rondas = 4  # establece el número de rondas del juego
+        rondas = 12  # establece el número de rondas del juego
 
 
 
@@ -57,7 +57,7 @@ class Juego:
 
 
             if opcion.lower() == "v":  # si elige verdad
-                pregunta = aux.message_GPT("Haz una pregunta personal al jugador , te en cuena el contexto que te escribo al final." + elegido + ".\n\n" + contexto)
+                pregunta = aux.message_GPT(f"Haz una pregunta personal al jugador{elegido}, puede ser una pregunta de cualquier tipo, desde cual ha sido su mejor polvo hasta su primer beso. Debe de ser una pregunta que se tenga que responder de manera oral. te en cuena el contexto que te escribo al final." + elegido + ".\n\n" + contexto)
                 print(pregunta)  # genera y muestra una pregunta personal usando la API y el contexto
 
                 # pide al jugador que diga si ha hecho o no el reto
@@ -84,14 +84,14 @@ class Juego:
                 # pide al jugador que diga si ha hecho o no el reto
                 resultado = input(f"{elegido,}¿Has hecho el reto? (s/n): ")
 
-            if resultado.lower() == "s":  # si ha hecho el reto
-                contexto += f"\nRonda {r+2}:\n{elegido} eligió reto y cumplió con su siguiente reto: "+ reto  # actualiza el contexto con el resultado del jugador
+                if resultado.lower() == "s":  # si ha hecho el reto
+                 contexto += f"\nRonda {r+2}:\n{elegido} eligió reto y cumplió con su siguiente reto: "+ reto  # actualiza el contexto con el resultado del jugador
 
 
-            elif resultado.lower() == "n":  # si no ha hecho el reto
-                castigo = aux.message_GPT("Dale un castigo al jugador " + elegido + " por no hacer su reto. ten en cuenta el contexto global.\n\n" + contexto)
-                print(castigo)  # genera y muestra un castigo usando la API y el contexto
-                contexto += f"{elegido} eligió reto pero no lo hizo, así que recibió el siguiente castigo: {castigo}\n\n"  # actualiza el contexto con el castigo del jugador
+                elif resultado.lower() == "n":  # si no ha hecho el reto
+                    castigo = aux.message_GPT("Dale un castigo al jugador " + elegido + " por no hacer su reto. ten en cuenta el contexto global.\n\n" + contexto)
+                    print(castigo)  # genera y muestra un castigo usando la API y el contexto
+                    contexto += f"{elegido} eligió reto pero no lo hizo, así que recibió el siguiente castigo: {castigo}\n\n"  # actualiza el contexto con el castigo del jugador
 
     print("El juego ha terminado. Gracias por jugar.")
 pass
