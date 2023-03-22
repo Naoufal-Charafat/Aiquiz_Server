@@ -1,37 +1,14 @@
 # usar Playground para los test los respuestas de la AI:
 # https://platform.openai.com/playground?model=text-davinci-003
 
-#app python cloud
-#https://www.pythonanywhere.com/
-
-#API: una amplia base de datos gratis de questionarios para diferentes temas sera usada (para modo no fiesta)
-#https://opentdb.com/api_config.php
-
-
 
 # posible formato de entrada:
-#--------------------modo fiesta----------------------------------
- 
-usando un lenguaje vulgar genera 2 pregunta en (español) , contexto de la pregunta es “ligar chicas” y la siguiente pregunta 2 se basa en el contexto de la ultima respuesta correcta de la pregunta anterior y así sucesivamente.
 
-El formato es:
-{Pregunta:
-Opciones:
-A)
-B)
-C)
-D)
-Respuesta correcta: }
-
-#--------------------modo general----------------------------------
 # Créame 4 pregunta en (español) , contexto de la pregunta es “marvel” y la siguiente pregunta 2 se basa en el contexto de la ultima respuesta correcta de la pregunta anterior y asi sucesivamente.
 # El formato es:
 # {Pregunta:
-#opciones:
 # A)
 # B)
 # C)
 # D)
 # Respuesta correcta: }
-
- 

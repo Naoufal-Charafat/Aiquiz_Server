@@ -1,25 +1,12 @@
+import server
 
 # ideas:
-#1)
+# 1)
 # la solicitud get que obtendremos de la web, un json con las últimas 500 questions para forzar a la ia que
 # genere preguntas que no sean las mismas que las últimas 500 questions
 
 
-
 if __name__ == '__main__':
-
-    print('Ai Quiz')
-
-    #  declarar los param_model
-
-
-
-
-    # crear el objeto server
-
-
-
-
-
-    # iniciar el servidor
-
+    server.app.run(debug=True)
+    # server.server.send_questions()
+    # print(server.server.trivia_test())
