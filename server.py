@@ -1,6 +1,7 @@
 import flask
 import requests
 import openai as ai
+import util
 
 app = flask.Flask(__name__)
 
@@ -60,13 +61,12 @@ class server:
         # Envía una solicitud GET a la API de OpenTDB
         cantidad_preguntas = 1
         difficulty = "easy"
-        type='multiple'
+        type = 'multiple'
         response = requests.get(
             f"https://opentdb.com/api.php?amount={cantidad_preguntas}&category=21&difficulty={difficulty}&type={type}")
 
         # Obtiene los datos de la respuesta en formato JSON
         data = response.json()
-        print(data)
         # formato
         """
                 {
@@ -100,7 +100,16 @@ class server:
         }
         """
         # Obtiene la pregunta de los datos recibidos
-        question = data['results'][0]['question']
+        pregunta = data['results'][0]['question']
+        respuesta_correcta= data['results'][0]['correct_answer']
+        respuestas_incorrectas = data['results'][0]['incorrect_answers']
+
+        text = (f'pregunta: {pregunta} \n'
+              f'respuesta_correcta: {respuesta_correcta} \n'
+              f'respuestas_incorrectas: {respuestas_incorrectas} \n')
+
+        mensaje = util.traducir_texto(text,'EN','ES')
+        return mensaje
 
     # ------------------------------------------testing-----------------------------------------------
     # en esta function comprobamos si caput ramos bien la solicitud get y devolver una respuesta a dicha solicitude

@@ -7,6 +7,6 @@ import server
 
 
 if __name__ == '__main__':
-    # server.app.run(debug=True)
+    server.app.run(debug=True)
     # server.server.send_questions()
-    server.server.trivia_test()
+    # print(server.server.trivia_test())
