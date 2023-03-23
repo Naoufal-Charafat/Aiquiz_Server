@@ -2,6 +2,7 @@
 
 from translate import Translator
 
+
 def traducir_texto(texto: str, idioma_origen: str, idioma_destino: str) -> str:
     """Traduce un texto desde el idioma de origen al idioma de destino usando la librería translate.
 
@@ -21,5 +22,15 @@ def traducir_texto(texto: str, idioma_origen: str, idioma_destino: str) -> str:
 
     return texto_traducido
 
+
 # Ejemplo idiomas
 
+
+def getApiOpentdb(numberQuestions, Category, Difficulty, type_question):
+    # Construir la api
+    apiOpentdb = f"https://opentdb.com/api.php?" \
+                 f"amount={numberQuestions}&" \
+                 f"category={Category}&" \
+                 f"difficulty={Difficulty}&" \
+                 f"type={type_question}"
+    return apiOpentdb
