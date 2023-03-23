@@ -1,4 +1,4 @@
-from Juego import Juego
+from Juego1 import Juego
 # from AiDavinci import Juego
 import flask
 from util import getApiOpentdb
@@ -40,7 +40,6 @@ def capture_request():
             ProofTruth = flask.request.args.get('ProofTruth')
 
             return 'Juego AI'
-            # Juego.juego(UrlApi)
 
         return 'NULL'
 
