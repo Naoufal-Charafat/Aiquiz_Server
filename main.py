@@ -20,7 +20,8 @@ def capture_request():
             raise ValueError("El valor typeGame incorrecto")
 
         # obtener parameters de Game stander
-        # ?typeGame=1&category=10&difficulty=easy&type=multiple&language=ES
+        # local: http://127.0.0.1:5000/?typeGame=1&category=10&difficulty=easy&type=multiple&language=ES
+        # cloud:https://softwebdd.pythonanywhere.com/?typeGame=1&category=10&difficulty=easy&type=multiple&language=ES
         if typeGame == '1':
             numberQuestions = 1
             category = flask.request.args.get('category')  # del 9 al 32
@@ -31,7 +32,8 @@ def capture_request():
             return Juego.juego(urlApi)
 
         # obtener parameters de Game AI
-        # ?typeGame=2&apiKey=sk-&roundNumber=5&namePlayers=jose;manuel&ProofTruth=P
+        # local: http://127.0.0.1:5000/?typeGame=2&apiKey=sk-&roundNumber=5&namePlayers=jose;manuel&ProofTruth=P
+        # cloud: https://softwebdd.pythonanywhere.com/?typeGame=2&apiKey=sk-&roundNumber=5&namePlayers=jose;manuel&ProofTruth=P
         if typeGame == '2':
             apiKey = flask.request.args.get('apiKey')
             roundNumber = flask.request.args.get('roundNumber')
@@ -39,7 +41,7 @@ def capture_request():
             # ProofTruth =>> P = prueba / T = verdad
             ProofTruth = flask.request.args.get('ProofTruth')
 
-            return 'Juego AI'
+            return '<h2>AIQUIZ :: Emborracha con la AI</h2>'
 
         return 'NULL'
 
