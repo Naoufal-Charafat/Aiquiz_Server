@@ -41,6 +41,6 @@ def seleccionSala(categoria, idioma,dif,tipo):
 resultado = seleccionSala('Art','ar','Hard','True/False')
 print(resultado)
 
-
+#pueba commit
 
 
