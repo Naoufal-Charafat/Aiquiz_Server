@@ -24,10 +24,10 @@ def traducir_texto(texto: str, idioma_origen: str, idioma_destino: str) -> str:
 # Ejemplo idiomas
 
 def seleccionSala(categoria, idioma,dif,tipo):
-    datoscategorias = ['Any Category','General Knowledge','Books','Film','Music','Musicals & Theatres','Television','Videogames','Board Games','Science & Nature','Computers','Mathematics','Mythology','Sports','Geography','History','Politics','Art','Celebrities','Animals','Vehicles','Comics','Gadgets','Japanese Anime & Manga','Cartoon & Animations']
+    datoscategorias = ['9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32']
     datosIdioma = ['af', 'sq', 'am', 'ar', 'hy', 'az', 'eu', 'be', 'bn', 'bs', 'bg', 'ca', 'ceb', 'ny', 'zh-cn', 'zh-tw', 'co', 'hr', 'cs', 'da', 'nl', 'en', 'eo', 'et', 'tl', 'fi', 'fr', 'fy', 'gl', 'ka', 'de', 'el', 'gu', 'ht', 'ha', 'haw', 'he', 'iw', 'hi', 'hmn', 'hu', 'is', 'ig', 'id', 'in', 'ga', 'it', 'ja', 'jw', 'kn', 'kk', 'km', 'rw', 'ko', 'ku', 'ky', 'lo', 'la', 'lv', 'lt', 'lb', 'mk', 'mg', 'ms', 'ml', 'mt', 'mi', 'mr', 'mn', 'my', 'ne', 'no', 'ny', 'ps', 'fa', 'pl', 'pt', 'pa', 'ro', 'ru', 'sm', 'gd', 'sr', 'st', 'sn', 'sd', 'si', 'sk', 'sl', 'so', 'es', 'su', 'sw', 'sv', 'tg', 'ta', 'te', 'th', 'tr', 'uk', 'ur']
-    dificultad = ['Any Difficulty','Easy','Medium','Hard']
-    type = ['Any Type','Multiple Choice','True/False']
+    dificultad = ['easy','medium','hard']
+    type = ['multiple','boolean']
     for cat_aux in datoscategorias:
         for idi_aux in datosIdioma:
             for dif_aux in dificultad:
@@ -37,8 +37,8 @@ def seleccionSala(categoria, idioma,dif,tipo):
 
     return False
 
-
-resultado = seleccionSala('Art','ar','Hard','True/False')
+# me pasa un string, puedo pasar a numero o coger string y comparar
+resultado = seleccionSala('27','ar','hard','boolean')
 print(resultado)
 
 
