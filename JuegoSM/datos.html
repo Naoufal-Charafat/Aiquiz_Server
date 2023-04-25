@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <limk rel="stylesheet" href="color.css">
+    <meta charset="UTF-8">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+    body{
+        font-family: 'Balsamiq Sans', cursive;
+      }
+    h1 {
+      color: #007bff;
+      text-align: center;
+      font-size: 70px;
+      margin-top: 150px;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+    }
+    input[type=text]
+    {
+      color: black;
+      height: 100px;
+      width: 400px;
+      text-decoration: none;
+      text-align: center;
+      font-family: 'Balsamiq Sans', cursive;
+      font-size: x-large;
+    }
+    .button {
+        border: none;
+        color: white;
+        text-align: center;
+        height: 50px;
+        width: 90px;
+        margin-top: 30px;
+        margin-left: 318px;
+        font-family: 'Balsamiq Sans', cursive;
+        cursor: pointer;
+    }
+
+    .button {background-color: #007bff;} /* Green */
+
+    body{
+        background-image: url("fondoo.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    </style>
+  </head>
+  <body>
+    <h1 id="numerojugador">Jugador 1</h1>
+    <div class="container">
+      <input type="text" size="15" maxlength="30" value="Nombre" name="nombre" >
+      <button class="button" id="siguiente_jugador">Siguiente</button>
+    </div>
+    
+  </body>
+</html>

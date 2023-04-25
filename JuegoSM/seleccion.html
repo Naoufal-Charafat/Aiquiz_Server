@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+ 
+    <title>Slider</title>
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+      body{
+        font-family: 'Balsamiq Sans', cursive;
+      }
+      input {
+        width: 88%;
+      }
+      .button {
+        border: none;
+        color: white;
+        text-align: center;
+        font-size: 15px;
+        margin-top: 0px;
+        height: 50px;
+        width: 530px;
+        cursor: pointer;
+      }
+
+      .button {background-color: #007bff;
+        font-family: 'Balsamiq Sans', cursive;} /* Green */
+
+      .button1 {
+        border: none;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        margin-top: 20px;
+        margin-left: 430px;
+        height: 50px;
+        width: 100px;
+        cursor: pointer;
+      }
+
+      .button1 {background-color: #007bff;
+        font-family: 'Balsamiq Sans', cursive;} /* Green */
+      
+      
+      /* Estilos para el slider */
+      input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 88%;
+        height: 20px;
+        margin: 2px;
+        background-color: #ddd;
+        border-radius: 10px;
+      }
+
+      /* Estilos para el thumb */
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #007bff;
+        cursor: pointer;
+      }
+
+      /* Estilos para la etiqueta de posición */
+      .slider-position {
+        display: inline-block;
+        margin: 1px;
+        font-size: 40px;
+        font-weight: bold;
+        color: #007bff;
+      }
+
+      .padre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px;
+
+      }
+
+      .imagen{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1; /* para que la imagen quede detrás del resto del contenido */
+        background-image: url("fondoo.webp");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+    </style>
+  </head>
+  
+  
+  <body>
+    <div class="imagen"></div>
+    <div class="padre">
+      <div class="hijo">
+        
+        <H1>Selecciona el número de jugadores:<H1>
+        <input type="range" min="2" max="25" value="2" id="slider1">
+        <span class="slider-position" id="slider-position1">2</span> 
+
+        <H1>Selecciona el número de rondas:<H1>
+        <input type="range" min="1" max="25" value="1" id="slider2">
+        <span class="slider-position" id="slider-position2">2</span>
+      
+      </div>  
+    </div>
+        <script>
+          var slider1 = document.getElementById("slider1");
+          var output1 = document.getElementById("slider-position1");
+
+          // Actualiza la posición cuando se mueve el slider1
+          slider1.oninput = function() {
+            output1.innerHTML = this.value;
+          }
+
+          var slider2 = document.getElementById("slider2");
+          var output2 = document.getElementById("slider-position2");
+
+          // Actualiza la posición cuando se mueve el slider2
+          slider2.oninput = function() {
+            output2.innerHTML = this.value;
+          }
+          
+        </script>
+        <div class="padre">
+          <div class="hijo">
+            <button class="button button">Consigue la API Key</button>
+            <button1 class="button1 button1">Siguiente</button1>
+          </div>  
+        </div>
+        
+  </body>
+</html>

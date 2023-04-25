@@ -6,7 +6,7 @@ class AiDavinci:
         openai.api_key = api_key
 
     @staticmethod
-    def message_GPT(message="hola"):
+    def message_GPT(message="No hay mensaje"):
         """
         funcion para obtener resuesta del chatgpt usando la nueva actualziacion de openai API
         :param message: pregutna del usur
@@ -15,7 +15,7 @@ class AiDavinci:
         request_ =openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "Soy el lider que ordenará juegos, pruebas, retos, preguntas, etc. Mi función es hacer que los integrantes del grupo se lo pasen bien, bebiendo alcohol con responsabilidad y creando situaciones de salseo. mis respuestas serán UNICAMENTE la pregunta, prueba, o castigo que deberán hacer cada jugador."},
+                {"role": "system", "content": "Soy el lider que ordenará juegos, pruebas, retos, preguntas, etc. Mi función es hacer que los integrantes del grupo se lo pasen bien, bebiendo alcohol con responsabilidad y creando situaciones de salseo. mis respuestas serán UNICAMENTE la pregunta, prueba, o castigo que deberán hacer cada jugador. Debo de ser original y crear retos diferentes en cada ronda. Es muy importante que tenga todo el contexto en cuenta a la hora de desarrollar los retos y preguntas. En la mayoría de estos retos los relacionaré con las rondas anteriores"},
                 {"role": "user", "content": message}
             ]
         )
@@ -26,21 +26,19 @@ class AiDavinci:
 class Juego:
 
     @staticmethod
-    def juego(ApiUserKey):
+    def juego(ApiUserKey,jugadores0=None):
         aux = AiDavinci(ApiUserKey)
 
         jugadores = []  # crea una lista vacía
-        n = int(input("¿Cuántos jugadores hay? "))  # pide el número de jugadores
+        # pide el número de jugadores
+        n=3
         for i in range(n):  # repite n veces
             nombre = input(f"Introduce el nombre del jugador {i+1}:")  # pide el nombre de cada jugador
             jugadores.append(nombre)  # añade el nombre a la lista
             nombres = ", ".join(jugadores)  # une los nombres con comas y espacios
 
-        #respuesta = aux.message_GPT("cuentame un chiste que involucre a estos jugadores: " + nombres)
-        #print(respuesta)
 
-
-        contexto = f"El contexto es el siguiente, los jugadores {nombres} están jugando a prueva o verdad, un juego social para amigos jóvenes que quieren pasarlo bien en un ambiente de fiesta y alcohol. Los retos son retos como darle un beso a alguien, hacer alguna imitación, hacer alguna posicion extraña, cantar algo. El castigo puede ser desde beber un trago largo de su cubata, quitarse una prenda, hasta estar callado durante un cierto tiempo (1-2 minutos si no beberá). Estas son sus últimas rondas: \nRonda 1:\nTodos los jugadores beben un trago al cubata y están en un ambiente calmado con música de sus gustos a volumen normal, y quieren jugar la siguiente ronda."
+        contexto = f"El contexto es el siguiente, los jugadores {nombres} están jugando a prueba o verdad, un juego social para amigos jóvenes que quieren pasarlo bien en un ambiente de fiesta y alcohol. Los retos son retos como darle un beso a alguien, hacer alguna imitación, hacer alguna posicion extraña, cantar algo. El castigo puede ser desde beber un trago largo de su cubata, quitarse una prenda, hasta estar callado durante un cierto tiempo (1-2 minutos si no beberá). Estas son sus últimas rondas: \nRonda 1:\nTodos los jugadores beben un trago al cubata y están en un ambiente calmado con música de sus gustos a volumen normal, y quieren jugar la siguiente ronda."
         rondas = 12  # establece el número de rondas del juego
 
 
@@ -65,7 +63,7 @@ class Juego:
 
                 if resultado.lower() == "s":  # si decide responder
                     respuesta = input("Respuesta: ")  # pide al jugador que responda a la pregunta
-                    contexto += f"\nRonda {r + 2}:\n{elegido} eligió verdad y respondicó lo siguiente: " + respuesta  # actualiza el contexto con el resultado del jugador
+                    contexto += f"\nRonda {r + 2}:\n{elegido} eligió verdad y respondió lo siguiente: " + respuesta  # actualiza el contexto con el resultado del jugador
 
 
                 elif resultado.lower() == "n":  # si decide no responder
