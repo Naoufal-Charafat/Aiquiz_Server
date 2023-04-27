@@ -1,7 +1,10 @@
 from Juego1 import Juego
 # from AiDavinci import Juego
 import flask
+from flask import request
+from flask_cors import cross_origin
 from util import getApiOpentdb
+import json
 
 app = flask.Flask(__name__)
 
@@ -11,7 +14,8 @@ app = flask.Flask(__name__)
 # server.server.send_questions()
 # print(server.server.trivia_test())
 # Juego.juego("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")
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
+@cross_origin()
 def capture_request():
     try:
         # typeGame => (1 = juego preguntas respuestas) (2 = juego ai reto)
@@ -29,19 +33,23 @@ def capture_request():
             type_question = flask.request.args.get('type')  # multiple;boolean
             language = flask.request.args.get('language')
             urlApi = getApiOpentdb(numberQuestions, category, difficulty, type_question)
-            return Juego.juego(urlApi)
+            return Juego.juego(urlApi,language)
 
         # obtener parameters de Game AI
         # local: http://127.0.0.1:5000/?typeGame=2&apiKey=sk-&roundNumber=5&namePlayers=jose;manuel&ProofTruth=P
         # cloud: https://softwebdd.pythonanywhere.com/?typeGame=2&apiKey=sk-&roundNumber=5&namePlayers=jose;manuel&ProofTruth=P
         if typeGame == '2':
-            apiKey = flask.request.args.get('apiKey')
-            roundNumber = flask.request.args.get('roundNumber')
-            namePlayers = flask.request.args.get('namePlayers')
-            # ProofTruth =>> P = prueba / T = verdad
-            ProofTruth = flask.request.args.get('ProofTruth')
+            data_entrante = request.get_json()
+            print(data_entrante)
+            # juego2.juego(data_entrante)
 
-            return '<h2>AIQUIZ :: Emborracha con la AI</h2>'
+
+            # Repley test
+            datos = {
+                "nombre": "Antonio"
+            }
+            datos_json = json.dumps(datos)
+            return datos_json
 
         return 'NULL'
 
