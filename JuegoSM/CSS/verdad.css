@@ -1,0 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap');
+
+body {
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    background-image: url('images/fondo.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .box {
+    background-color: yellow;
+    padding: 30px;
+    border-radius: 5px;
+    margin-top: 30px;
+    border: 2px solid black;
+  }
+  
+  .button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  h1 {
+    font-size: 42px;
+  }
+  
+  p {
+    font-size: 30px;
+    margin: 0;
+  }
+  
+  button {
+    font-size: 22px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .yes-button {
+    background-color: #007bff;
+    color: #fff;
+    margin-right: 20px;
+  }
+  
+  .no-button {
+    background-color: #dc3545;
+    color: #fff;
+    margin-left: 20px;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .container {
+      margin-top: 50px;
+    }
+    
+    h1 {
+      font-size: 30px;
+    }
+    
+    p {
+      font-size: 22px;
+    }
+    
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+    }
+    
+    .yes-button {
+      margin-right: 10px;
+    }
+    
+    .no-button {
+      margin-left: 10px;
+    }
+  }
+  

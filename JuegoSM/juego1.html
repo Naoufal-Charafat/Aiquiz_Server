@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI QUIZ</title>
+
+    <!-- font awesome icon link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fonts link  -->
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- external css link  -->
+    <link rel="stylesheet" href="CSS/juego1.css">
+    <link rel="stylesheet" href="JS/juego1.js">
+
+</head>
+<body class = "flex">
+    <img src="https://yost.es/SM-IT/2022-23/2E/website/ai-quiz-1.webp" width="400">
+
+    <div class = "wrapper">
+        <div class = "quiz-container">
+            <div class = "quiz-head">
+                <div class = "quiz-score">
+                    <span id = "correct-score"></span>/<span id = "total-question"></span>
+                </div>
+            </div>
+            <div class = "quiz-body">
+                <h2 class = "quiz-question" id = "question"></h2>
+                <ul class = "quiz-options">
+                </ul>
+                <div id = "result">
+                </div>
+            </div>
+            <div class = "quiz-foot">
+                <button type = "button" id = "check-answer">Verificar</button>
+                <button type = "button" id = "play-again">Jugar de nuevo!</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- external js link  -->    
+    <script src="juego1.js"></script>
+    <script src="JS/juego1.js"></script>
+</body>
+</html>
