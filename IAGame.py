@@ -1,12 +1,8 @@
 import openai
-import random
 import json
-class AiDavinci:
-
-
+class GPT:
     @staticmethod
     def message_GPT(message):
-
         request_ =openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
@@ -22,19 +18,17 @@ class Juego:
 
     @staticmethod
     def juego(datos_json):
+        apiKey = datos_json["apiKey"]
+        contexto = datos_json["contexto"]
+        openai.api_key= apiKey
+        request = GPT.message_GPT(contexto)
 
-        datos = json.loads(datos_json)
-        apiKey =  datos["apiKey"]
-        contexto = datos["contexto"]
-        jugador = datos["jugador"]
-        accion = datos["accion"]  # las acciones son p/v/c  prueba verdad o castig
 
-        openai.api_key=apiKey
-        print(f'La api key que se ha recibido es:{apiKey} \nEl contexto  que se ha recibido es:{contexto} \nLa accion que se ha recibido es:{accion}')
+        request_json = {
+            "contexto": request,
+        }
 
-        contexto=contexto+f"\nRonda 2:\n Turno de {jugador}, esta ronda es de tipo {accion} y es el siguiente: "
-        respuesta = AiDavinci.message_GPT(contexto)
-        print(f"\n\nTexto generado: {respuesta}")
 
+        return json.dumps(request_json)
 
 
