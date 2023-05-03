@@ -45,7 +45,7 @@ def capture_request():
             raise ValueError("El valor typeGame incorrecto")
 
         # obtener parameters de Game stander
-        # local: http://127.0.0.1:5000/?typeGame=1&category=10&difficulty=easy&type=multiple&language=ES
+        # local: http://127.0.0.1:80/?typeGame=1&category=10&difficulty=easy&type=multiple&language=ES
         # cloud:https://softwebdd.pythonanywhere.com/?typeGame=1&category=10&difficulty=easy&type=multiple&language=ES
         # local&cloud:https://9004-154-60-243-237.ngrok-free.app/?typeGame=1&category=10&difficulty=easy&type=multiple&language=ES
         if typeGame == 'quiz':
@@ -60,7 +60,7 @@ def capture_request():
             return juego1.juego(urlApi, language)
 
         # obtener parameters de Game AI
-        # local: http://127.0.0.1:5000/?typeGame=2&apiKey=sk-&roundNumber=5&namePlayers=jose;manuel&ProofTruth=P
+        # local: http://127.0.0.1:80/?typeGame=2&apiKey=sk-&roundNumber=5&namePlayers=jose;manuel&ProofTruth=P
         # cloud: https://softwebdd.pythonanywhere.com/?typeGame=2&apiKey=sk-&roundNumber=5&namePlayers=jose;manuel&ProofTruth=P
         # local&cloud:https://9004-154-60-243-237.ngrok-free.app/?typeGame=2&apiKey=sk-&roundNumber=5&namePlayers=jose;manuel&ProofTruth=P
         if typeGame == 'aiquiz':
@@ -81,7 +81,7 @@ def capture_request():
             return _repley1
 
         # obtener datos de la BD-Mysql y enviar datos al chatbot
-        # local: http://127.0.0.1:5000/?typeGame=chatbot
+        # local: http://127.0.0.1:80/?typeGame=chatbot
         # cloud:https://softwebdd.pythonanywhere.com/?typeGame=chatbot
         # local&cloud:https://9004-154-60-243-237.ngrok-free.app/?typeGame=chatbot
         if typeGame == 'chatbot':
