@@ -2,22 +2,24 @@ from Juego1 import Juego as juego1
 from IAGame import Juego as juego2
 import flask
 from flask import request
-from flask_cors import cross_origin
+from flask_cors import cross_origin,CORS
 from util import getApiOpentdb
 
 import mysql.connector
 
 app = flask.Flask(__name__)
+CORS(app)
+
 def chatbotEPS(datos_json):
-    # obtener datos
+    # Haga clic en el enlace https://db.yost.es/ para abrir el recurso.
     sentencia = datos_json['consultas']
 
     # Crea una conexión a la base de datos
     mydb = mysql.connector.connect(
-        host="sql205.your-server.de",
-        user="wp_yosta_6 ",
-        password="mkNMTMWQ4Zcg85GX",
-        database="wp_yosta_db6"
+        host="server.softwebdd.com",
+        user="chatbotServer",
+        password="2wqfyky2ep58",
+        database="chatbotEPS"
     )
 
     # Comprueba si la conexión fue exitosa
@@ -29,6 +31,7 @@ def chatbotEPS(datos_json):
         # Obtén los resultados de la consulta
         rows = mycursor.fetchall()
     # Cierra la conexión a la base de datos
+    mycursor.close()
     mydb.close()
 
     return rows
@@ -90,10 +93,10 @@ def capture_request():
 
     except Exception as e:
         # Manejo de la excepción
-        return f"<h2>AiQUIZ Se produjo un error al procesar la solicitud.</h2>" \
+        return f"<h2>AI-Quiz Se produjo un error al procesar la solicitud.</h2>" \
                f"<br>Url: {flask.request.url}" \
                f"<br><br>Error: {e}"
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=80, debug=False)
+    app.run(port=80, debug=False)
