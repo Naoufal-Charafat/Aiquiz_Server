@@ -7,8 +7,8 @@ from elevenlabs import generate
 class elevenlabs:
     @staticmethod
     def generateAudio(message):
-        # eleven_api_key = "a0456e0445284d2b481b0e72b7e49e3b"
-        eleven_api_key = "88e683262c1f48cebcc6158e66271ba6"
+        # eleven_api_key =  
+        eleven_api_key = 
         audio = generate(
             text=message,
             api_key= eleven_api_key,
