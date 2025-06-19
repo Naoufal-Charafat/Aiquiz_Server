@@ -16,10 +16,10 @@ def chatbotEPS(datos_json):
 
     # Crea una conexión a la base de datos
     mydb = mysql.connector.connect(
-        host="server.softwebdd.com",
-        user="chatbotServer",
-        password="2wqfyky2ep58",
-        database="chatbotEPS"
+        host="************",
+        user="************",
+        password="********",
+        database="*****"
     )
 
     # Comprueba si la conexión fue exitosa
